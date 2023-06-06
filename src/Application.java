@@ -9,7 +9,14 @@ public class Application extends JFrame {
     private JRadioButton dRadioButton;
     private JButton goBackButton;
     private JButton goForwardButton;
+    private JLabel QuestionHeading;
+    private JLabel Question;
+    private JLabel Score;
+    private JLabel OptionA;
+    private JLabel OptionB;
+    private JLabel OptionC;
 
+    ButtonGroup options = new ButtonGroup();
     public Application() {
         setContentPane(panelMain);
         setTitle("Quiz Application");
@@ -17,5 +24,7 @@ public class Application extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
+        options.add(aRadioButton); options.add(bRadioButton); options.add(cRadioButton); options.add(dRadioButton);
+        
     }
 }

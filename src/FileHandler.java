@@ -8,7 +8,6 @@ public class FileHandler {
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                // Process each line as needed
                 System.out.println(line);
             }
         } catch (IOException e) {

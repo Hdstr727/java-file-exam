@@ -11,7 +11,7 @@
       <title-color color="-4473925"/>
     </border>
     <children>
-      <component id="15970" class="javax.swing.JLabel">
+      <component id="15970" class="javax.swing.JLabel" binding="QuestionHeading">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -51,7 +51,7 @@
           <text value="D"/>
         </properties>
       </component>
-      <component id="51a95" class="javax.swing.JLabel">
+      <component id="51a95" class="javax.swing.JLabel" binding="OptionA">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -59,7 +59,7 @@
           <text value="Kad vajag ierakstit faila"/>
         </properties>
       </component>
-      <component id="c523e" class="javax.swing.JLabel">
+      <component id="c523e" class="javax.swing.JLabel" binding="OptionB">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -67,7 +67,7 @@
           <text value="Nekad"/>
         </properties>
       </component>
-      <component id="71d0b" class="javax.swing.JLabel">
+      <component id="71d0b" class="javax.swing.JLabel" binding="OptionC">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -91,7 +91,7 @@
           <text value="Atpakaļ"/>
         </properties>
       </component>
-      <component id="ec41b" class="javax.swing.JLabel">
+      <component id="ec41b" class="javax.swing.JLabel" binding="Question">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -107,7 +107,7 @@
           <text value="Uz priekšu"/>
         </properties>
       </component>
-      <component id="58b7d" class="javax.swing.JLabel">
+      <component id="58b7d" class="javax.swing.JLabel" binding="Score">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
