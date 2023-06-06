@@ -7,8 +7,8 @@ public class Application extends JFrame {
     private JRadioButton bRadioButton;
     private JRadioButton cRadioButton;
     private JRadioButton dRadioButton;
-    private JButton uzPriekšuButton;
-    private JButton atpakaļButton;
+    private JButton goBackButton;
+    private JButton goForwardButton;
 
     public Application() {
         setContentPane(panelMain);
