@@ -3,8 +3,9 @@ public class Main {
         FileHandler fileHandler = new FileHandler();
         String filePathQuestions = "questions.txt";
         String filePathAnswers = "answers.txt";
-        fileHandler.readData(filePathQuestions);
-        fileHandler.readData(filePathAnswers);
+        fileHandler.readQuestions(filePathQuestions, 1);
+        fileHandler.readAnswerOptions(filePathAnswers, 1);
+        fileHandler.readAnswer(filePathAnswers, 1);
 
         new Application();
     }

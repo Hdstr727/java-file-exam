@@ -8,7 +8,6 @@ public class Application extends JFrame {
     private JRadioButton cRadioButton;
     private JRadioButton dRadioButton;
     private JButton goBackButton;
-    private JButton goForwardButton;
     private JLabel QuestionHeading;
     private JLabel Question;
     private JLabel Score;
