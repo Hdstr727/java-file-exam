@@ -57,7 +57,7 @@
           <text value="D"/>
         </properties>
       </component>
-      <component id="51a95" class="javax.swing.JLabel" binding="OptionA">
+      <component id="51a95" class="javax.swing.JLabel" binding="OptionAText">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -65,7 +65,7 @@
           <text value="Kad vajag ierakstit faila"/>
         </properties>
       </component>
-      <component id="c523e" class="javax.swing.JLabel" binding="OptionB">
+      <component id="c523e" class="javax.swing.JLabel" binding="OptionBText">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -73,7 +73,7 @@
           <text value="Nekad"/>
         </properties>
       </component>
-      <component id="71d0b" class="javax.swing.JLabel" binding="OptionC">
+      <component id="71d0b" class="javax.swing.JLabel" binding="OptionCText">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -81,7 +81,7 @@
           <text value="Nē"/>
         </properties>
       </component>
-      <component id="3d8d7" class="javax.swing.JLabel">
+      <component id="3d8d7" class="javax.swing.JLabel" binding="OptionDText">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

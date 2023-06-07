@@ -11,9 +11,17 @@ public class Application extends JFrame {
     private JLabel QuestionHeading;
     private JLabel Question;
     private JLabel Score;
-    private JLabel OptionA;
-    private JLabel OptionB;
-    private JLabel OptionC;
+    private JLabel OptionAText;
+    private JLabel OptionBText;
+    private JLabel OptionCText;
+    private JLabel OptionDText;
+
+    String correctAnswer = "";
+    String optionAValue = "";
+    String optionBValue = "";
+    String optionCValue = "";
+    String optionDValue = "";
+
 
     ButtonGroup options = new ButtonGroup();
     public Application() {
@@ -24,6 +32,20 @@ public class Application extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         options.add(aRadioButton); options.add(bRadioButton); options.add(cRadioButton); options.add(dRadioButton);
-        
+
+        FileHandler fileHandler = new FileHandler();
+        String filePathQuestions = "questions.txt";
+        String filePathAnswers = "answers.txt";
+        String[] options = fileHandler.readAnswerOptions(filePathAnswers, 1);
+        optionAValue = options[0];
+        optionBValue = options[1];
+        optionCValue = options[2];
+        optionDValue = options[3];
+        correctAnswer = fileHandler.readAnswer(filePathAnswers, 1);
+        System.out.println("A: "+optionAValue);
+        System.out.println("B: "+optionBValue);
+        System.out.println("C: "+optionCValue);
+        System.out.println("D: "+optionDValue);
+        System.out.println("Correct answer: "+correctAnswer);
     }
 }
