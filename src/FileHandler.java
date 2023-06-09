@@ -21,10 +21,8 @@ public class FileHandler {
         return line;
     }
 
-
-
     public String[] readAnswerOptions(String filePath, int lineNumber) {
-        String[] options = new String[4]; // Array to hold the option values
+        String[] options = new String[4];
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
             String line;
             int currentLineNumber = 1;

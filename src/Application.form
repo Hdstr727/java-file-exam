@@ -6,7 +6,7 @@
       <xy x="437" y="395" width="620" height="451"/>
     </constraints>
     <properties>
-      <background color="-6312097"/>
+      <background color="-6684673"/>
     </properties>
     <border type="none">
       <font/>
@@ -26,7 +26,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6312097"/>
+          <background color="-6684673"/>
           <text value="A"/>
         </properties>
       </component>
@@ -35,7 +35,7 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6312097"/>
+          <background color="-6684673"/>
           <text value="B"/>
         </properties>
       </component>
@@ -44,7 +44,7 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6312097"/>
+          <background color="-6684673"/>
           <text value="C"/>
         </properties>
       </component>
@@ -53,7 +53,7 @@
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6312097"/>
+          <background color="-6684673"/>
           <text value="D"/>
         </properties>
       </component>
