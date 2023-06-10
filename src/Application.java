@@ -37,13 +37,13 @@ public class Application extends JFrame {
         FileHandler fileHandler = new FileHandler();
         String filePathQuestions = "questions.txt";
         String filePathAnswers = "answers.txt";
-        String[] options = fileHandler.readAnswerOptions(filePathAnswers, 1);
+        String[] options = fileHandler.readAnswerOptions(filePathAnswers, 3);
         optionAValue = options[0];
         optionBValue = options[1];
         optionCValue = options[2];
         optionDValue = options[3];
-        correctAnswer = fileHandler.readAnswer(filePathAnswers, 1);
-        question = fileHandler.readQuestion(filePathQuestions, 1);
+        correctAnswer = fileHandler.readAnswer(filePathAnswers, 3);
+        question = fileHandler.readQuestion(filePathQuestions, 3);
 
         Question.setText(question);
         OptionAText.setText(optionAValue);
