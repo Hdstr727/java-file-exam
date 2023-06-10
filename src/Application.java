@@ -2,9 +2,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Application extends JFrame implements ActionListener {
 
+    String filePathQuestions = "questions.txt";
+    String filePathAnswers = "answers.txt";
+    ArrayList<Question> questions = new ArrayList<>();
     private JPanel panelMain;
     private JRadioButton aRadioButton;
     private JRadioButton bRadioButton;
@@ -29,6 +33,7 @@ public class Application extends JFrame implements ActionListener {
 
 
     ButtonGroup options = new ButtonGroup();
+
     public Application() {
         setContentPane(panelMain);
         setTitle("Quiz Application");
@@ -36,12 +41,12 @@ public class Application extends JFrame implements ActionListener {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
-        options.add(aRadioButton); options.add(bRadioButton); options.add(cRadioButton); options.add(dRadioButton);
+        options.add(aRadioButton);
+        options.add(bRadioButton);
+        options.add(cRadioButton);
+        options.add(dRadioButton);
 
         FileHandler fileHandler = new FileHandler();
-        String filePathQuestions = "questions.txt";
-        String filePathAnswers = "answers.txt";
-        ArrayList<Question> questions = new ArrayList<>();
 
         int totalQuestions = fileHandler.getLineCount(filePathQuestions);
 
@@ -60,19 +65,35 @@ public class Application extends JFrame implements ActionListener {
 
             questions.add(question);
         }
-        
-        QuestionText.setText(questions.get(3).getQuestion());
-        OptionAText.setText(questions.get(3).getOptionA());
-        OptionBText.setText(questions.get(3).getOptionB());
-        OptionCText.setText(questions.get(3).getOptionC());
-        OptionDText.setText(questions.get(3).getOptionD());
 
+
+        Collections.shuffle(questions);
+        QuestionText.setText(questions.get(0).getQuestion());
+        OptionAText.setText(questions.get(0).getOptionA());
+        OptionBText.setText(questions.get(0).getOptionB());
+        OptionCText.setText(questions.get(0).getOptionC());
+        OptionDText.setText(questions.get(0).getOptionD());
         goForwardButton.addActionListener(this);
     }
+
+    int currentQuestion = 0;
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == goForwardButton) {
+            currentQuestion++;
 
+            if (currentQuestion < questions.size()) {
+                Question current = questions.get(currentQuestion);
+
+                QuestionText.setText(current.getQuestion());
+                OptionAText.setText(current.getOptionA());
+                OptionBText.setText(current.getOptionB());
+                OptionCText.setText(current.getOptionC());
+                OptionDText.setText(current.getOptionD());
+            } else {
+
+            }
         }
     }
 }
