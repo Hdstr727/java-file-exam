@@ -57,7 +57,6 @@ public class Application extends JFrame implements ActionListener {
             questions.add(question);
         }
 
-
         Collections.shuffle(questions);
         QuestionText.setText(questions.get(0).getQuestion());
         OptionAText.setText(questions.get(0).getOptionA());

@@ -2,3 +2,5 @@ A) Jā | B)Nē | C) Varbut | D) Noteikti nē | *Jā
 A) BufferedReader.readLine() | B) Files.readLine() | C) FileReader.readLine() | D) Files.getLine() | *BufferedReader.readLine()
 A) Files.deleteFile() | B) File.delete() | C) Files.removeFile() | D) FileReader.deleteFile() | *File.delete()
 A) java.net | B) java.util | C) java.io | D) java.awt | *java.io
+A) Nē, nevar | B)Jā, var | C)Scanner strāda tikai konsolē | D)Kas ir Scanner? | *Jā, var
+A) getName() | B) getAbsolutePath() | C) length() | D) Visas minētas | *Visas minētas

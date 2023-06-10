@@ -1,6 +1,6 @@
 # Darbs ar teksta datnēm programmēšanas valodā Java
 
-[Macību materials](https://docs.google.com/presentation/d/1faufD6v-8caA9WQ62H_EGcDMquAnKDss3OAmZ28IDb0/edit?usp=sharing)
+[Mācību materials](https://docs.google.com/presentation/d/1faufD6v-8caA9WQ62H_EGcDMquAnKDss3OAmZ28IDb0/edit?usp=sharing)
 
 [Lietojumgadījumu Diagramma](https://imgur.com/a/bFsHuEP)
 
