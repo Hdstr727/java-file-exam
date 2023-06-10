@@ -1,3 +1,4 @@
 A) Jā | B)Nē | C) Varbut | D) noteikti nē | *ja
 A) BufferedReader.readLine() | B) Files.readLine() | C) FileReader.readLine() | D) Files.getLine() | *BufferedReader.readLine()
 A) Files.deleteFile() | B) File.delete() | C) Files.removeFile() | D) FileReader.deleteFile() | *File.delete()
+A) java.net | B) java.util | C) java.io | D) java.awt | *java.io

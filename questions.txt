@@ -1,3 +1,4 @@
 Vai java ir daudz veidu kā nolasit informaciju no teksta datnes?
 Kā nolasīt konkrētu rindiņu no teksta datnes Java programmā?
 Kā dzēst teksta datni Java programmā?
+Kuru pakotni vajag importet lai stradat ar failiem Java?

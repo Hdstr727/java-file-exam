@@ -10,7 +10,6 @@ public class FileHandler {
             int currentLineNumber = 1;
             while ((line = bufferedReader.readLine()) != null) {
                 if (currentLineNumber == lineNumber) {
-                    System.out.println(line);
                     break;
                 }
                 currentLineNumber++;
