@@ -23,15 +23,6 @@ public class Application extends JFrame implements ActionListener {
     private JLabel OptionCText;
     private JLabel OptionDText;
 
-
-    String question = "";
-    String correctAnswer = "";
-    String optionAValue = "";
-    String optionBValue = "";
-    String optionCValue = "";
-    String optionDValue = "";
-
-
     ButtonGroup options = new ButtonGroup();
 
     public Application() {
