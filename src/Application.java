@@ -67,15 +67,30 @@ public class Application extends JFrame implements ActionListener {
         goForwardButton.addActionListener(this);
     }
 
-    int currentQuestion = 0;
+    private int currentQuestion = 0;
+    private int score = 0;
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == goForwardButton) {
+            Question current = questions.get(currentQuestion);
+            String selectedOption = getSelectedOption();
+
+            if (selectedOption != null) {
+                if (selectedOption.equals(current.getCorrectAnswer())) {
+                    score += 2;
+                } else {
+                    if (score > 0) {
+                        score--;
+                    }
+                }
+            }
+            Score.setText("Punkti: " + score);
+
             currentQuestion++;
 
             if (currentQuestion < questions.size()) {
-                Question current = questions.get(currentQuestion);
+                current = questions.get(currentQuestion);
 
                 QuestionText.setText(current.getQuestion());
                 OptionAText.setText(current.getOptionA());
@@ -87,4 +102,17 @@ public class Application extends JFrame implements ActionListener {
             }
         }
     }
+    private String getSelectedOption() {
+        if (aRadioButton.isSelected()) {
+            return OptionAText.getText();
+        } else if (bRadioButton.isSelected()) {
+            return OptionBText.getText();
+        } else if (cRadioButton.isSelected()) {
+            return OptionCText.getText();
+        } else if (dRadioButton.isSelected()) {
+            return OptionDText.getText();
+        }
+        return null;
+    }
 }
+
