@@ -1,1 +1,2 @@
 A) ja | B) ne | C) varbut | D) noteikti ne | *ja
+A) BufferedReader.readLine() | B) Files.readLine() | C) FileReader.readLine() | D) Files.getLine() | *BufferedReader.readLine()

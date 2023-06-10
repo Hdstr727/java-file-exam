@@ -16,6 +16,7 @@ public class Application extends JFrame {
     private JLabel OptionCText;
     private JLabel OptionDText;
 
+    String question = "";
     String correctAnswer = "";
     String optionAValue = "";
     String optionBValue = "";
@@ -42,10 +43,12 @@ public class Application extends JFrame {
         optionCValue = options[2];
         optionDValue = options[3];
         correctAnswer = fileHandler.readAnswer(filePathAnswers, 1);
-        System.out.println("A: "+optionAValue);
-        System.out.println("B: "+optionBValue);
-        System.out.println("C: "+optionCValue);
-        System.out.println("D: "+optionDValue);
-        System.out.println("Correct answer: "+correctAnswer);
+        question = fileHandler.readQuestion(filePathQuestions, 1);
+
+        Question.setText(question);
+        OptionAText.setText(optionAValue);
+        OptionBText.setText(optionBValue);
+        OptionCText.setText(optionCValue);
+        OptionDText.setText(optionDValue);
     }
 }
