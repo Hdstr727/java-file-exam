@@ -1,10 +1,18 @@
 public class Question {
+    private String question;
     private String optionA;
     private String optionB;
     private String optionC;
     private String optionD;
     private String correctAnswer;
 
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
     public void setOptionA(String optionA) {
         this.optionA = optionA;
     }

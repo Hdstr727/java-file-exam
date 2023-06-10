@@ -3,6 +3,18 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileHandler {
+
+    public int getLineCount(String filePath) {
+        int lineCount = 0;
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            while (bufferedReader.readLine() != null) {
+                lineCount++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lineCount;
+    }
     public String readQuestion(String filePath, int lineNumber) {
         String line = null;
         try (FileReader fileReader = new FileReader(filePath);
