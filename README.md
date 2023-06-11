@@ -9,5 +9,5 @@
 ### **Darāmo darbu saraksts**
 - [x] Izveidot mācību materiālu
 - [x] Izveidot UML diagrammas (Activity, Use Case) 
-- [ ] Izveidot testa programmu
+- [x] Izveidot testa programmu
 - [ ] Izveidot prezentāciju aizstāvēšanai
