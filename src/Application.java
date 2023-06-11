@@ -160,7 +160,7 @@ public class Application extends JFrame implements ActionListener {
     public static int showOptionDialog() {
         String[] buttonLabels = {"Jā", "Nē, apturēt", "Nē, restartēt"};
         int choice;
-        choice = JOptionPane.showOptionDialog(null, "Vai vēlaties apskatīt rezultātus", "Izvēle",
+        choice = JOptionPane.showOptionDialog(null, "Vai vēlaties apskatīt rezultātus?", "Izvēle",
                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, buttonLabels, buttonLabels[0]);
 
         return choice;
