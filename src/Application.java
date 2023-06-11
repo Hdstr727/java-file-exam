@@ -1,13 +1,12 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.awt.event.*;
+import java.util.*;
 
 public class Application extends JFrame implements ActionListener {
 
     String filePathQuestions = "questions.txt";
     String filePathAnswers = "answers.txt";
+    String filePathScores = "scores.txt";
     ArrayList<Question> questions = new ArrayList<>();
     private JPanel panelMain;
     private JRadioButton aRadioButton;
@@ -63,11 +62,20 @@ public class Application extends JFrame implements ActionListener {
         OptionBText.setText(questions.get(0).getOptionB());
         OptionCText.setText(questions.get(0).getOptionC());
         OptionDText.setText(questions.get(0).getOptionD());
+
         goForwardButton.addActionListener(this);
+        goForwardButton.setEnabled(false);
+
+        aRadioButton.addItemListener(new RadioButtonListener());
+        bRadioButton.addItemListener(new RadioButtonListener());
+        cRadioButton.addItemListener(new RadioButtonListener());
+        dRadioButton.addItemListener(new RadioButtonListener());
     }
 
     private int currentQuestion = 0;
     private int score = 0;
+    private int correctAnswerCount = 0;
+    private int incorrectAnswerCount = 0;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -78,11 +86,19 @@ public class Application extends JFrame implements ActionListener {
             if (selectedOption != null) {
                 if (selectedOption.equals(current.getCorrectAnswer())) {
                     score += 2;
+                    correctAnswerCount++;
                 } else {
                     if (score > 0) {
                         score--;
+                        incorrectAnswerCount++;
+                    }else {
+                        incorrectAnswerCount++;
                     }
+
                 }
+            } else {
+                JOptionPane.showMessageDialog(this, "Ludzu izveleties atbildi", "Nav izveleta atbilde", JOptionPane.WARNING_MESSAGE);
+                return;
             }
             Score.setText("Punkti: " + score);
 
@@ -99,8 +115,19 @@ public class Application extends JFrame implements ActionListener {
                 OptionCText.setText(current.getOptionC());
                 OptionDText.setText(current.getOptionD());
             } else {
-
+                 String name = "";
+                do {
+                    name = JOptionPane.showInputDialog("Jus ieguvat " + score + " punktus! \n Ievadi savu vardu!");
+                } while(name.equalsIgnoreCase(""));
+                FileHandler.writeToFile(filePathScores, name, score, correctAnswerCount, incorrectAnswerCount);
             }
+        }
+    }
+
+    private class RadioButtonListener implements ItemListener {
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            goForwardButton.setEnabled(options.getSelection() != null);
         }
     }
     private String getSelectedOption() {
@@ -115,5 +142,6 @@ public class Application extends JFrame implements ActionListener {
         }
         return null;
     }
+
 }
 

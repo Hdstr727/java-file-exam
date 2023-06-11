@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileHandler {
@@ -84,5 +86,18 @@ public class FileHandler {
             e.printStackTrace();
         }
         return null;
+    }
+    public static void writeToFile(String filePath, String name, int score, int correctAnswerCount, int incorrectAnswerCount) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+            String data = "name: "+ name + " | score: " + score + " | correct Answers: " + correctAnswerCount + " | incorrect Anwers: " + incorrectAnswerCount + " |";
+            writer.write(data);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void readQuizScores(String filePath) {
+
     }
 }
