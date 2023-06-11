@@ -86,6 +86,8 @@ public class Application extends JFrame implements ActionListener {
             }
             Score.setText("Punkti: " + score);
 
+            options.clearSelection();
+
             currentQuestion++;
 
             if (currentQuestion < questions.size()) {
