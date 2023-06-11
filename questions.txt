@@ -1,6 +1,10 @@
 Vai java ir daudz veidu kā nolasit informaciju no teksta datnes?
 Kā nolasīt konkrētu rindiņu no teksta datnes Java programmā?
 Kā dzēst teksta datni Java programmā?
-Kuru pakotni vajag importet lai stradat ar failiem Java?
+Kuru pakotni nepieciešams importet lai stradat ar failiem Java?
 Vai ar Scanner klasi var nolasīt datus no teksta datnes?
 Kādas metodes var izmantot lai iegut informāciju par failu?
+Kuru klasi bieži izmanto lai ierakstot failā efektīvi sadalīt datus?
+Kuru klasi izmanto kad nepieciešams ātri nolasīt datus?
+Kuru klasi izmanto kad nepieciešams ātri ierakstīt datus?
+Ko izmanto lai ķert kļudas strādajot ar failiem?
