@@ -1,8 +1,11 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileHandler {
 
@@ -89,7 +92,7 @@ public class FileHandler {
     }
     public static void writeToFile(String filePath, String name, int score, int correctAnswerCount, int incorrectAnswerCount) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
-            String data = "name: "+ name + " | score: " + score + " | correct Answers: " + correctAnswerCount + " | incorrect Anwers: " + incorrectAnswerCount + " |";
+            String data = "Vārds: "+ name + " | Punkti: " + score + " | Pareizas atbildes: " + correctAnswerCount + " | Nepareizas atbildes: " + incorrectAnswerCount + " |";
             writer.write(data);
             writer.newLine();
         } catch (IOException e) {
@@ -97,7 +100,22 @@ public class FileHandler {
         }
     }
 
-    public void readQuizScores(String filePath) {
+    public static void readQuizScores(String filePath) {
+        List<String> quizScores = new ArrayList<>();
 
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                quizScores.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        StringBuilder message = new StringBuilder();
+        for (String score : quizScores) {
+            message.append(score).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, message.toString(), "Testa rezultāti", JOptionPane.INFORMATION_MESSAGE);
     }
 }

@@ -90,14 +90,12 @@ public class Application extends JFrame implements ActionListener {
                 } else {
                     if (score > 0) {
                         score--;
-                        incorrectAnswerCount++;
-                    }else {
-                        incorrectAnswerCount++;
                     }
+                    incorrectAnswerCount++;
 
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Ludzu izveleties atbildi", "Nav izveleta atbilde", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ludzu izveleties atbildi", "Nav izveleta atbilde", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             Score.setText("Punkti: " + score);
@@ -117,12 +115,28 @@ public class Application extends JFrame implements ActionListener {
             } else {
                  String name = "";
                 do {
-                    name = JOptionPane.showInputDialog("Jus ieguvat " + score + " punktus! \n Ievadi savu vardu!");
+                    name = JOptionPane.showInputDialog("Jūs ieguvāt " + score + " punktus! \n Ievadi savu vārdu!");
                 } while(name.equalsIgnoreCase(""));
                 FileHandler.writeToFile(filePathScores, name, score, correctAnswerCount, incorrectAnswerCount);
+
+                int choice;
+
+                do {
+                    choice = showOptionDialog();
+
+                    if (choice == JOptionPane.YES_OPTION) {
+                        FileHandler.readQuizScores(filePathScores);
+                    } else if (choice == JOptionPane.NO_OPTION) {
+                        System.exit(0);
+                    } else if (choice == JOptionPane.CANCEL_OPTION) {
+                        restartQuiz();
+                    }
+                } while (choice != JOptionPane.NO_OPTION && choice != JOptionPane.CANCEL_OPTION);
             }
+
         }
-    }
+
+        }
 
     private class RadioButtonListener implements ItemListener {
         @Override
@@ -141,6 +155,33 @@ public class Application extends JFrame implements ActionListener {
             return OptionDText.getText();
         }
         return null;
+    }
+
+    public static int showOptionDialog() {
+        String[] buttonLabels = {"Jā", "Nē, apturēt", "Nē, restartēt"};
+        int choice;
+        choice = JOptionPane.showOptionDialog(null, "Vai vēlaties apskatīt rezultātus", "Izvēle",
+                JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, buttonLabels, buttonLabels[0]);
+
+        return choice;
+    }
+    private void restartQuiz() {
+        Collections.shuffle(questions);
+        currentQuestion = 0;
+        score = 0;
+        correctAnswerCount = 0;
+        incorrectAnswerCount = 0;
+
+        Question current = questions.get(currentQuestion);
+        QuestionText.setText(current.getQuestion());
+        OptionAText.setText(current.getOptionA());
+        OptionBText.setText(current.getOptionB());
+        OptionCText.setText(current.getOptionC());
+        OptionDText.setText(current.getOptionD());
+        Score.setText("Punkti: " + score);
+
+        options.clearSelection();
+        goForwardButton.setEnabled(false);
     }
 
 }
