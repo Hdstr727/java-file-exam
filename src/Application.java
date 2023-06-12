@@ -1,6 +1,7 @@
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.*;
 import java.util.*;
+import java.awt.event.*;
 
 public class Application extends JFrame implements ActionListener {
 
@@ -25,9 +26,60 @@ public class Application extends JFrame implements ActionListener {
     ButtonGroup options = new ButtonGroup();
 
     public Application() {
+    	panelMain = new JPanel();
+    	Color color = new Color(153, 255, 255);
+
+        QuestionHeading = new JLabel("Jautājums:");
+        aRadioButton = new JRadioButton("A");
+        bRadioButton = new JRadioButton("B");
+        cRadioButton = new JRadioButton("C");
+        dRadioButton = new JRadioButton("D");
+        goForwardButton = new JButton("Uz priekšu");
+        QuestionText = new JLabel("");
+        Score = new JLabel("Punkti: 0");
+        OptionAText = new JLabel("");
+        OptionBText = new JLabel("");
+        OptionCText = new JLabel("");
+        OptionDText = new JLabel("");
+
+     
+        QuestionHeading.setBounds(80, 40, 90, 30);
+        QuestionText.setBounds(200, 40, 400, 30);
+        Score.setBounds(650, 40, 90, 30);
+        aRadioButton.setBounds(80, 120, 90, 30);
+        bRadioButton.setBounds(80, 220, 90, 30);
+        cRadioButton.setBounds(80, 320, 90, 30);
+        dRadioButton.setBounds(80, 420, 90, 30);
+        OptionAText.setBounds(340, 120, 180, 30);
+        OptionBText.setBounds(340, 220, 180, 30);
+        OptionCText.setBounds(340, 320, 180, 30);
+        OptionDText.setBounds(340, 420, 180, 30);
+        goForwardButton.setBounds(650, 500, 120, 30);
+        
+        panelMain.setBackground(color);
+        aRadioButton.setBackground(color);
+        bRadioButton.setBackground(color);
+        cRadioButton.setBackground(color);
+        dRadioButton.setBackground(color);
+        
+        panelMain.add(QuestionHeading);
+        panelMain.add(QuestionText);
+        panelMain.add(Score);
+        panelMain.add(aRadioButton);
+        panelMain.add(bRadioButton);
+        panelMain.add(cRadioButton);
+        panelMain.add(dRadioButton);
+        panelMain.add(OptionAText);
+        panelMain.add(OptionBText);
+        panelMain.add(OptionCText);
+        panelMain.add(OptionDText);
+        panelMain.add(goForwardButton);
+        
+        
         setContentPane(panelMain);
         setTitle("Quiz Application");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -112,6 +164,14 @@ public class Application extends JFrame implements ActionListener {
                 OptionBText.setText(current.getOptionB());
                 OptionCText.setText(current.getOptionC());
                 OptionDText.setText(current.getOptionD());
+                
+                String questionText = current.getQuestion();
+                
+                if (questionText.length() <= 48) {
+                	QuestionText.setBounds(250, 40, 400, 30);
+                } else {
+                	QuestionText.setBounds(200, 40, 400, 30);
+                }
             } else {
                  String name = "";
                 do {
